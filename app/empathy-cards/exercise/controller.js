@@ -1,6 +1,6 @@
 import Ember from 'ember';
-import Feelings from 'bepeace/static_data/feelings';
-import Needs from 'bepeace/static_data/needs';
+import Feelings from 'empathy-cards/static_data/feelings';
+import Needs from 'empathy-cards/static_data/needs';
 
 export default Ember.Controller.extend({
     feelings: Feelings,

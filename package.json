@@ -1,7 +1,7 @@
 {
-  "name": "bepeace",
+  "name": "empathy-cards",
   "version": "0.0.0",
-  "description": "Small description for bepeace goes here",
+  "description": "For when you want to give yourself empathy",
   "private": true,
   "directories": {
     "doc": "doc",

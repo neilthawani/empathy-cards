@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'bepeace',
+    modulePrefix: 'empathy-cards',
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
