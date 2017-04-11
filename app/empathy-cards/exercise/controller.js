@@ -43,9 +43,7 @@ export default Ember.Controller.extend({
     showSummary: false,
 
     situation: null,
-    showSituation: Ember.computed('showSituationTextarea', 'situation', function() {
-    	return !this.get('showSituationTextarea') && this.get('situation');
-    }),
+    showSituation: false,
     selectedFeelingCards: null,
     showSelectedFeelingCards: Ember.computed('showFeelingCards', 'selectedFeelingCards', function() {
     	return !this.get('showFeelingCards') && this.get('selectedFeelingCards');
@@ -57,7 +55,7 @@ export default Ember.Controller.extend({
 
     actions: {
         displayFeelingCards: function() {
-        	this.toggleProperty('showSituationTextarea');
+            this.toggleProperty('showSituation');
             this.toggleProperty('showFeelingCards');
         },
         displayNeedCards: function(selectedFeelingCards) {
