@@ -1,0 +1,24 @@
+<div class="exercise-container">
+	<h3 class="exercise-step">
+		1. Describe the situation.
+	</h3>
+
+	{{textarea
+		value = situation
+		classNames = "exercise-situation"}}
+
+	{{#unless showFeelingCards}}
+	<div class="button next-button" {{action "displayFeelingCards"}}>
+		Next
+	</div>
+	{{/unless}}
+
+	{{#if showFeelingCards}}
+		<h3 class="exercise-step">
+			2. Choose all the <span class="instructions-feelings">feeling cards</span> related to the situation.
+		</h3>
+		
+		{{feeling-cards
+			feelings = shuffledFeelings}}
+	{{/if}}
+</div>

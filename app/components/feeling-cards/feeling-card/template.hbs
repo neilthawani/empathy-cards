@@ -1,0 +1,15 @@
+{{#if showCard}}
+	<div class="feeling-card">
+		{{feeling}}
+	</div>
+
+	<div class="select-discard-buttons">
+		<span class="button select-button" {{action "selectCard"}}>
+			Select
+		</span>
+
+		<span class="button discard-button" {{action "discardCard"}}>
+			Discard
+		</span>
+	</div>
+{{/if}}

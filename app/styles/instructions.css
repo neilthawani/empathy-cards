@@ -1,0 +1,24 @@
+.instructions-container {
+	border: 1px solid black;
+	padding: 0 5%;
+	margin: 50px auto;
+	width: 30%;
+}
+
+.instructions-feelings {
+	color: blue;
+	font-weight: bold;
+}
+
+.instructions-needs {
+	color: green;
+	font-weight: bold;
+}
+
+.start-button {
+	background-color: green;
+	border: 2px solid black;
+	height: 50px;
+	margin: 50px auto;
+	font-size: 1.5em;
+}

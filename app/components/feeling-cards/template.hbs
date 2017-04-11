@@ -1,0 +1,8 @@
+{{#each feelings as |feeling index|}}
+	{{feeling-cards/feeling-card
+		feeling = feeling
+		index = index
+		indexToDisplay = indexToDisplay
+		selectCard = "selectCard"
+		discardCard = "discardCard"}}
+{{/each}}

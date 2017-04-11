@@ -7,6 +7,10 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+	this.route('empathy-cards', function() {
+		this.route('instructions');
+        this.route('exercise');
+    });    
 });
 
 export default Router;

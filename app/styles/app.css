@@ -1,0 +1,36 @@
+@import "instructions.css";
+@import "exercise.css";
+
+html {
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+// p, ol {
+// 	-webkit-margin-before: 0;
+// 	-webkit-margin-after: 0;
+// 	-webkit-margin-start: 0px;
+// 	-webkit-margin-end: 0px;
+// }
+
+.text-center {
+	text-align: center;
+}
+
+footer {
+	position: absolute;
+	bottom: 0px;
+	font-size: 0.75em;
+	left: 0;
+	right: 0;
+}
+
+.button {
+	font-weight: lighter;
+	color: white;
+	width: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	cursor: pointer;
+}
