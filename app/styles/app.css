@@ -5,15 +5,15 @@ html {
 	font-family: Helvetica, Arial, sans-serif;
 }
 
-// p, ol {
-// 	-webkit-margin-before: 0;
-// 	-webkit-margin-after: 0;
-// 	-webkit-margin-start: 0px;
-// 	-webkit-margin-end: 0px;
-// }
-
 .text-center {
 	text-align: center;
+}
+
+.container {
+	border: 1px solid black;
+	padding: 0 5%;
+	margin: 50px auto;
+	width: 30%;
 }
 
 footer {
@@ -22,6 +22,14 @@ footer {
 	font-size: 0.75em;
 	left: 0;
 	right: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+footer a {
+	margin-left: 10px;
+	margin-right: 10px;
 }
 
 .button {

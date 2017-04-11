@@ -1,8 +1,24 @@
-{{#each needs as |need index|}}
-	{{need-cards/need-card
-		need = need
-		index = index
-		indexToDisplay = indexToDisplay
-		selectCard = "selectCard"
-		discardCard = "discardCard"}}
-{{/each}}
+<h3>
+	3. Choose all the <span class="instructions-needs">need cards</span> related to the situation.
+</h3>
+
+{{#unless showSelectedNeedCards}}
+	{{#each needs as |need index|}}
+		{{need-cards/need-card
+			need = need
+			index = index
+			indexToDisplay = indexToDisplay
+			selectCard = "selectCard"
+			discardCard = "discardCard"}}
+	{{/each}}
+{{/unless}}
+
+{{#if showSelectedNeedCards}}
+	<div class="selected-cards">
+		{{#each selectedCards as |card|}}
+			<div class="selected-card need-card">
+				{{card}}
+			</div>
+		{{/each}}
+	</div>
+{{/if}}

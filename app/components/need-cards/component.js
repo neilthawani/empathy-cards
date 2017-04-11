@@ -2,6 +2,8 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
     needs: null,
+    showSelectedNeedCards: false,
+
     indexToDisplay: 0,
 
     selectedCards: [],

@@ -1,8 +1,24 @@
-{{#each feelings as |feeling index|}}
-	{{feeling-cards/feeling-card
-		feeling = feeling
-		index = index
-		indexToDisplay = indexToDisplay
-		selectCard = "selectCard"
-		discardCard = "discardCard"}}
-{{/each}}
+<h3>
+	2. Choose all the <span class="instructions-feelings">feeling cards</span> related to the situation.
+</h3>
+
+{{#unless showSelectedFeelingCards}}
+	{{#each feelings as |feeling index|}}
+		{{feeling-cards/feeling-card
+			feeling = feeling
+			index = index
+			indexToDisplay = indexToDisplay
+			selectCard = "selectCard"
+			discardCard = "discardCard"}}
+	{{/each}}
+{{/unless}}
+
+{{#if showSelectedFeelingCards}}
+	<div class="selected-cards">
+		{{#each selectedCards as |card|}}
+			<div class="selected-card feeling-card">
+				{{card}}
+			</div>
+		{{/each}}
+	</div>
+{{/if}}

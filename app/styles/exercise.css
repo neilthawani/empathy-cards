@@ -60,3 +60,23 @@
 	float: right;
 	background-color: red;
 }
+
+.selected-cards {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.selected-card {
+	color: white;
+	width: 90px;
+	height: 30px;
+	margin: 10px auto;
+	padding: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 3px solid white;
+	outline: 1px dashed black;
+	font-size: 0.85em;
+}

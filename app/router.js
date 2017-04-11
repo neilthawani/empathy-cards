@@ -10,6 +10,7 @@ Router.map(function() {
 	this.route('empathy-cards', function() {
 		this.route('instructions');
         this.route('exercise');
+        this.route('about');
     });    
 });
 

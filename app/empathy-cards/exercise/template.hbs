@@ -1,35 +1,26 @@
 <div class="exercise-container">
-	<h3 class="exercise-step">
-		1. Describe the situation.
-	</h3>
-
-	{{textarea
-		value = situation
-		classNames = "exercise-situation"}}
-
-	{{#unless showFeelingCards}}
-	<div class="button next-button" {{action "displayFeelingCards"}}>
-		Next
-	</div>
-	{{/unless}}
+	{{#if showSituationTextarea}}
+		{{situation-description
+			situation = situation
+			showSituation = showSituation
+			displayFeelingCards = "displayFeelingCards"}}
+	{{/if}}
 
 	{{#if showFeelingCards}}
-		<h3 class="exercise-step">
-			2. Choose all the <span class="instructions-feelings">feeling cards</span> related to the situation.
-		</h3>
-
 		{{feeling-cards
 			feelings = shuffledFeelings
+			showSelectedFeelingCards = showSelectedFeelingCards
 			displayNeedCards = "displayNeedCards"}}
 	{{/if}}
 
 	{{#if showNeedCards}}
-		<h3 class="exercise-step">
-			3. Choose all the <span class="instructions-needs">need cards</span> related to the situation.
-		</h3>
-
 		{{need-cards
-			needs = shuffledNeeds}}
-			{{!-- displaySummary = "displaySummary"}} --}}
+			needs = shuffledNeeds
+			showSelectedNeedCards = showSelectedNeedCards
+			displaySummary = "displaySummary"}}
+	{{/if}}
+
+	{{#if showSummary}}
+		{{exercise-summary}}
 	{{/if}}
 </div>

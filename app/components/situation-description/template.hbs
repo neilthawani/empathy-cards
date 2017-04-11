@@ -1,0 +1,19 @@
+<h3>
+	1. Describe the situation.
+</h3>
+
+{{#unless showSituation}}
+	{{textarea
+		value = situation
+		classNames = "exercise-situation"}}
+
+	<div class="button next-button" {{action "displayFeelingCards"}}>
+		Next
+	</div>
+{{/unless}}
+
+{{#if showSituation}}
+	<p>
+		{{situation}}
+	</p>
+{{/if}}

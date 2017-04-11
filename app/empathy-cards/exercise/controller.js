@@ -26,30 +26,49 @@ export default Ember.Controller.extend({
         return array;
     },
 
-    shuffledFeelings: Ember.computed("feelings", function() {
-    	var feelings = this.get("feelings") || [];
+    shuffledFeelings: Ember.computed('feelings', function() {
+    	var feelings = this.get('feelings') || [];
     	
     	return this.shuffle(feelings);
     }),
-    shuffledNeeds: Ember.computed("needs", function() {
-    	var needs = this.get("needs") || [];
+    shuffledNeeds: Ember.computed('needs', function() {
+    	var needs = this.get('needs') || [];
 
     	return this.shuffle(needs);
     }),
 
+    showSituationTextarea: true,
     showFeelingCards: false,
     showNeedCards: false,
+    showSummary: false,
 
     situation: null,
+    showSituation: Ember.computed('showSituationTextarea', 'situation', function() {
+    	return !this.get('showSituationTextarea') && this.get('situation');
+    }),
     selectedFeelingCards: null,
+    showSelectedFeelingCards: Ember.computed('showFeelingCards', 'selectedFeelingCards', function() {
+    	return !this.get('showFeelingCards') && this.get('selectedFeelingCards');
+    }),
+    selectedNeedCards: null,
+    showSelectedNeedCards: Ember.computed('showNeedCards', 'selectedNeedCards', function() {
+    	return !this.get('showNeedCards') && this.get('selectedNeedCards');
+    }),
 
     actions: {
         displayFeelingCards: function() {
+        	this.toggleProperty('showSituationTextarea');
             this.toggleProperty('showFeelingCards');
         },
         displayNeedCards: function(selectedFeelingCards) {
         	this.set('selectedFeelingCards', selectedFeelingCards);
+        	this.toggleProperty('showSelectedFeelingCards');
         	this.toggleProperty('showNeedCards');
+        },
+        displaySummary: function(selectedNeedCards) {
+        	this.set('selectedNeedCards', selectedNeedCards);
+        	this.toggleProperty('showSelectedNeedCards');
+        	this.toggleProperty('showSummary');
         }
     }
 });
