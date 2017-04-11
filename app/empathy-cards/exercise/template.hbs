@@ -17,8 +17,19 @@
 		<h3 class="exercise-step">
 			2. Choose all the <span class="instructions-feelings">feeling cards</span> related to the situation.
 		</h3>
-		
+
 		{{feeling-cards
-			feelings = shuffledFeelings}}
+			feelings = shuffledFeelings
+			displayNeedCards = "displayNeedCards"}}
+	{{/if}}
+
+	{{#if showNeedCards}}
+		<h3 class="exercise-step">
+			3. Choose all the <span class="instructions-needs">need cards</span> related to the situation.
+		</h3>
+
+		{{need-cards
+			needs = shuffledNeeds}}
+			{{!-- displaySummary = "displaySummary"}} --}}
 	{{/if}}
 </div>

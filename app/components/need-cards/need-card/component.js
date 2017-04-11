@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-    feeling: null,
+    need: null,
     index: null,
     indexToDisplay: null,
 
@@ -11,10 +11,10 @@ export default Ember.Component.extend({
 
     actions: {
         selectCard: function() {
-            this.sendAction('selectCard', this.get('feeling'));
+            this.sendAction('selectCard', this.get('need'));
         },
         discardCard: function() {
-            this.sendAction('discardCard', this.get('feeling'));
+            this.sendAction('discardCard', this.get('need'));
         }
     }
 });

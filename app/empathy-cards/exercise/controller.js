@@ -41,10 +41,15 @@ export default Ember.Controller.extend({
     showNeedCards: false,
 
     situation: null,
+    selectedFeelingCards: null,
 
     actions: {
         displayFeelingCards: function() {
             this.toggleProperty('showFeelingCards');
+        },
+        displayNeedCards: function(selectedFeelingCards) {
+        	this.set('selectedFeelingCards', selectedFeelingCards);
+        	this.toggleProperty('showNeedCards');
         }
     }
 });

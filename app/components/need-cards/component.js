@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-    feelings: null,
+    needs: null,
     indexToDisplay: 0,
 
     selectedCards: [],
@@ -15,8 +15,8 @@ export default Ember.Component.extend({
 
     		this.incrementProperty('indexToDisplay');
 
-    		if (this.get('indexToDisplay') === (this.get('feelings').length)) {
-    			this.send('displayNeedCards');
+    		if (this.get('indexToDisplay') === (this.get('needs').length)) {
+    			this.send('displaySummary');
 			}
     	},
     	discardCard: function(feeling) {
@@ -26,12 +26,12 @@ export default Ember.Component.extend({
 
     		this.incrementProperty('indexToDisplay');
 
-    		if (this.get('indexToDisplay') === (this.get('feelings').length)) {
-    			this.send('displayNeedCards');
+    		if (this.get('indexToDisplay') === (this.get('needs').length)) {
+    			this.send('displaySummary');
 			}
     	},
-    	displayNeedCards: function() {
-    		this.sendAction('displayNeedCards', this.get('selectedCards'));
+    	displaySummary: function() {
+    		this.sendAction('displaySummary', this.get('selectedCards'));
     	}
     }
 });

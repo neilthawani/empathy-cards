@@ -1,0 +1,8 @@
+{{#each needs as |need index|}}
+	{{need-cards/need-card
+		need = need
+		index = index
+		indexToDisplay = indexToDisplay
+		selectCard = "selectCard"
+		discardCard = "discardCard"}}
+{{/each}}
