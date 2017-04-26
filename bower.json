@@ -2,6 +2,12 @@
   "name": "empathy-cards",
   "dependencies": {
     "ember": "~2.8.0",
-    "ember-cli-shims": "0.1.1"
+    "ember-cli-shims": "0.1.1",
+    "ember-cli-test-loader": "0.2.2",
+    "ember-qunit": "0.4.9",
+    "ember-qunit-notifications": "0.1.0",
+    "qunit": "~1.18.0",
+    "hammerjs": "1.1.3",
+    "ember-hammer": "^1.0.3"
   }
 }
