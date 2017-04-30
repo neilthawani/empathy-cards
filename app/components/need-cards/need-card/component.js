@@ -16,5 +16,5 @@ export default Ember.Component.extend({
         discardCard: function() {
             this.sendAction('discardCard', this.get('need'));
         }
-    }
+    },
 });

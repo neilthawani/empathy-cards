@@ -16,5 +16,17 @@ export default Ember.Component.extend({
         discardCard: function() {
             this.sendAction('discardCard', this.get('feeling'));
         }
+    },
+
+    gestures: {
+        swipeLeft: function(event) {
+            console.log("left");
+            // do something like send an event down the controller/route chain
+            return false; // return `false` to stop bubbling
+        },
+        swipeRight: function(event) {
+            console.log("right");
+            /* ... */
+        }
     }
 });
