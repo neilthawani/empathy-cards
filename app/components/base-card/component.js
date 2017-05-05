@@ -22,13 +22,11 @@ export default Ember.Component.extend({
 
     gestures: {
         swipeLeft: function(event) {
-            console.log("left");
-            // do something like send an event down the controller/route chain
+            this.send('discardCard');
             return false; // return `false` to stop bubbling
         },
         swipeRight: function(event) {
-            console.log("right");
-            /* ... */
+            this.send('discardCard');
         }
     }
 });
