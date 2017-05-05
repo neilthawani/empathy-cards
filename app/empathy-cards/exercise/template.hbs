@@ -8,6 +8,7 @@
 
 	{{#if showFeelingCards}}
 		{{feeling-cards
+			isMobile = isMobile
 			feelings = shuffledFeelings
 			showSelectedFeelingCards = showSelectedFeelingCards
 			displayNeedCards = "displayNeedCards"}}
@@ -15,6 +16,7 @@
 
 	{{#if showNeedCards}}
 		{{need-cards
+			isMobile = isMobile
 			needs = shuffledNeeds
 			showSelectedNeedCards = showSelectedNeedCards
 			displaySummary = "displaySummary"}}

@@ -3,6 +3,9 @@ import Feelings from 'empathy-cards/static_data/feelings';
 import Needs from 'empathy-cards/static_data/needs';
 
 export default Ember.Controller.extend({
+    application: Ember.inject.controller(),
+    isMobile: Ember.computed.alias('application.isMobile'),
+    
     feelings: Feelings,
     needs: Needs,
 

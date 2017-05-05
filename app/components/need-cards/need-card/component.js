@@ -1,20 +1,5 @@
-import Ember from 'ember';
+import BaseCard from 'empathy-cards/components/base-card/component';
 
-export default Ember.Component.extend({
-    need: null,
-    index: null,
-    indexToDisplay: null,
+export default BaseCard.extend({
 
-    showCard: Ember.computed('index', 'indexToDisplay', function() {
-        return this.get('index') === this.get('indexToDisplay');
-    }),
-
-    actions: {
-        selectCard: function() {
-            this.sendAction('selectCard', this.get('need'));
-        },
-        discardCard: function() {
-            this.sendAction('discardCard', this.get('need'));
-        }
-    },
 });

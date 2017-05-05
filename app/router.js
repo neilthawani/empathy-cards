@@ -8,7 +8,7 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
 	this.route('empathy-cards', function() {
-		this.route('instructions');
+		this.route('instructions', { path: '/' });
         this.route('exercise');
         this.route('about');
     });    

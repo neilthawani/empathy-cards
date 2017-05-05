@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+    isMobile: false,
     needs: null,
     showSelectedNeedCards: false,
 
