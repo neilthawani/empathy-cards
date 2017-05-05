@@ -15,20 +15,20 @@ export default Ember.Component.extend({
 
     actions: {
         selectCard: function() {
-            this.sendAction('selectCard', this.get('need'));
+            this.sendAction('selectCard', this.get('card'));
         },
         discardCard: function() {
-            this.sendAction('discardCard', this.get('need'));
+            this.sendAction('discardCard', this.get('card'));
         }
     },
 
     gestures: {
         swipeLeft: function(event) {
             this.send('discardCard');
-            return false; // return `false` to stop bubbling
+            // return false; // return `false` to stop bubbling
         },
         swipeRight: function(event) {
-            this.send('discardCard');
+            this.send('selectCard');
         }
     }
 });

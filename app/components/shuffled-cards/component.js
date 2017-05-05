@@ -11,6 +11,11 @@ export default Ember.Component.extend({
     selectedCards: [],
     discardedCards: [],
 
+    init: function() {
+        this._super();
+        this.set('selectedCards', []);
+    },
+
     actions: {
     	selectCard: function(card) {
     		var selectedCards = this.get('selectedCards');
@@ -19,8 +24,8 @@ export default Ember.Component.extend({
 
     		this.incrementProperty('indexToDisplay');
 
-    		if (this.get('displayNextStep') === (this.get('cards').length)) {
-    			this.send('displayNeedCards');
+    		if (this.get('indexToDisplay') === (this.get('cards').length)) {
+    			this.send('displayNextStep');
 			}
     	},
     	discardCard: function(card) {
@@ -35,13 +40,7 @@ export default Ember.Component.extend({
 			}
     	},
     	displayNextStep: function() {
-            var cardType = this.get('cardType');
-
-            if (cardType === 'feelings') {
-                this.sendAction('displayNeedCards', this.get('selectedCards'));
-            } else if (cardType === 'needs') {
-                this.sendAction('displaySummary');
-            }
+            this.sendAction('displayNextStep', this.get('selectedCards'));
     	}
     }
 });

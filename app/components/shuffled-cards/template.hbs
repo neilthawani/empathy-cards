@@ -15,6 +15,7 @@
 {{/unless}}
 
 {{#if showSelectedCards}}
+	{{log selectedCards}}
 	<div class="selected-cards">
 		{{#each selectedCards as |selectedCard|}}
 			<div class="selected-card {{!-- {{singularize-word cardType}} --}}feeling-card">
