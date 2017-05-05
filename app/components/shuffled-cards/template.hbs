@@ -1,11 +1,12 @@
 <h3>
-	2. {{unless isMobile "Choose" "Swipe right to select"}} all the <span class="instructions-feelings">feeling cards</span> related to the situation.
+	{{if (is-equal cardType "feelings") "2." "3."}} {{unless isMobile "Choose" "Swipe right to select"}} all the <span class="instructions-{{cardType}}">{{singularize-word cardType}} cards</span> related to the situation.
 </h3>
 
 {{#unless showSelectedCards}}
 	{{#each card as |card index|}}
-		{{feeling-cards/feeling-card
+		{{base-card
 			card = card
+			cardType = cardType
 			index = index
 			indexToDisplay = indexToDisplay
 			selectCard = "selectCard"
@@ -16,7 +17,7 @@
 {{#if showSelectedCards}}
 	<div class="selected-cards">
 		{{#each selectedCards as |selectedCard|}}
-			<div class="selected-card feeling-card">
+			<div class="selected-card {{singularize-word cardType}}-card">
 				{{selectedCard}}
 			</div>
 		{{/each}}

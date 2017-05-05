@@ -2,8 +2,8 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
     isMobile: false,
-    feelings: null,
-    showSelectedFeelingCards: false,
+    cards: null,
+    showSelectedCards: false,
     
     indexToDisplay: 0,
 

@@ -2,10 +2,10 @@
 	3. {{unless isMobile "Choose" "Swipe right to select"}} all the <span class="instructions-needs">need cards</span> related to the situation.
 </h3>
 
-{{#unless showSelectedNeedCards}}
-	{{#each needs as |need index|}}
+{{#unless showSelectedCards}}
+	{{#each cards as |need index|}}
 		{{need-cards/need-card
-			need = need
+			card = need
 			index = index
 			indexToDisplay = indexToDisplay
 			selectCard = "selectCard"
@@ -13,11 +13,11 @@
 	{{/each}}
 {{/unless}}
 
-{{#if showSelectedNeedCards}}
+{{#if showSelectedCards}}
 	<div class="selected-cards">
-		{{#each selectedCards as |card|}}
+		{{#each selectedCards as |selectedCard|}}
 			<div class="selected-card need-card">
-				{{card}}
+				{{selectedCard}}
 			</div>
 		{{/each}}
 	</div>

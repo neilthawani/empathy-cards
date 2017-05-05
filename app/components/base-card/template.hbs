@@ -1,0 +1,15 @@
+{{#if showCard}}
+	<div class="card {{cardType}}-card">
+		{{card}}
+	</div>
+
+	<div class="select-discard-buttons hidden-phone">
+		<span class="button select-button" {{action "selectCard"}}>
+			Select
+		</span>
+
+		<span class="button discard-button" {{action "discardCard"}}>
+			Discard
+		</span>
+	</div>
+{{/if}}

@@ -7,19 +7,21 @@
 	{{/if}}
 
 	{{#if showFeelingCards}}
-		{{feeling-cards
+		{{shuffled-cards
 			isMobile = isMobile
-			feelings = shuffledFeelings
-			showSelectedFeelingCards = showSelectedFeelingCards
-			displayNeedCards = "displayNeedCards"}}
+			cards = shuffledFeelings
+			cardType = "feelings"
+			showSelectedCards = showSelectedFeelingCards
+			displayNextStep = "displayNeedCards"}}
 	{{/if}}
 
 	{{#if showNeedCards}}
-		{{need-cards
+		{{shuffled-cards
 			isMobile = isMobile
-			needs = shuffledNeeds
-			showSelectedNeedCards = showSelectedNeedCards
-			displaySummary = "displaySummary"}}
+			cards = shuffledNeeds
+			cardType = "needs"
+			showSelectedCards = showSelectedNeedCards
+			displayNextStep = "displaySummary"}}
 	{{/if}}
 
 	{{#if showSummary}}

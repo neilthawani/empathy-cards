@@ -1,8 +1,10 @@
+// TODO: Download a CSS reference book to do transition events.
+
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-	feeling: null,
-	need: null,
+	card: null,
+    cardType: "",
 	
     index: null,
     indexToDisplay: null,
