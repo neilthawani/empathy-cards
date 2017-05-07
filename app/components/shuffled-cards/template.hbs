@@ -12,10 +12,16 @@
 			selectCard = "selectCard"
 			discardCard = "discardCard"}}
 	{{/each}}
+
+
+	<div class="card-count text-center">
+		<span class="card-count-current">{{add-one indexToDisplay}}</span>
+		<span class="card-count-operand">/</span>
+		<span class="card-count-total">{{cards.length}}</span>
+	</div>
 {{/unless}}
 
 {{#if showSelectedCards}}
-	{{log selectedCards}}
 	<div class="selected-cards">
 		{{#each selectedCards as |selectedCard|}}
 			<div class="selected-card {{singularize-word cardType}}-card">

@@ -5,7 +5,7 @@ export default Ember.Component.extend({
     cards: null,
     cardType: "",
     showSelectedCards: false,
-    
+
     indexToDisplay: 0,
 
     selectedCards: [],
@@ -17,30 +17,30 @@ export default Ember.Component.extend({
     },
 
     actions: {
-    	selectCard: function(card) {
-    		var selectedCards = this.get('selectedCards');
-    		selectedCards.push(card);
-    		this.set('selectedCards', selectedCards);
+        selectCard: function(card) {
+            var selectedCards = this.get('selectedCards');
+            selectedCards.push(card);
+            this.set('selectedCards', selectedCards);
 
-    		this.incrementProperty('indexToDisplay');
+            this.incrementProperty('indexToDisplay');
 
-    		if (this.get('indexToDisplay') === (this.get('cards').length)) {
-    			this.send('displayNextStep');
-			}
-    	},
-    	discardCard: function(card) {
-    		var discardedCards = this.get('discardedCards');
-    		discardedCards.push(card);
-    		this.set('discardedCards', discardedCards);
+            if (this.get('indexToDisplay') === (this.get('cards').length)) {
+                this.send('displayNextStep');
+            }
+        },
+        discardCard: function(card) {
+            var discardedCards = this.get('discardedCards');
+            discardedCards.push(card);
+            this.set('discardedCards', discardedCards);
 
-    		this.incrementProperty('indexToDisplay');
+            this.incrementProperty('indexToDisplay');
 
-    		if (this.get('indexToDisplay') === (this.get('cards').length)) {
-    			this.send('displayNextStep');
-			}
-    	},
-    	displayNextStep: function() {
+            if (this.get('indexToDisplay') === (this.get('cards').length)) {
+                this.send('displayNextStep');
+            }
+        },
+        displayNextStep: function() {
             this.sendAction('displayNextStep', this.get('selectedCards'));
-    	}
+        }
     }
 });
