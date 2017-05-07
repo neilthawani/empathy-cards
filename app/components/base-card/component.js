@@ -36,10 +36,10 @@ export default Ember.Component.extend(KeyboardBindings, {
         }
     },
 
+    // Note: Return `false` to stop bubbling
     gestures: {
         swipeLeft: function(event) {
             this.send('discardCard');
-            // return false; // return `false` to stop bubbling
         },
         swipeRight: function(event) {
             this.send('selectCard');
