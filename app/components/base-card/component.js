@@ -4,7 +4,6 @@ import Ember from 'ember';
 import KeyboardBindings from 'empathy-cards/mixins/keyboard-bindings';
 
 export default Ember.Component.extend(KeyboardBindings, {
-    classNames: ["selectable-card-container"],
 	card: null,
     cardType: "",
 	
