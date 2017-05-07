@@ -1,5 +1,5 @@
 <h3>
-	{{if (is-equal cardType "feelings") "2." "3."}} {{unless isMobile "Choose" "Swipe right to select"}} all the <span class="instructions-{{cardType}}">{{singularize-word cardType}} cards</span> related to the situation.
+	{{if (is-equal cardType "feelings") "2." "3."}} {{unless isMobile "Press the right arrow key" "Swipe right"}} to select all the <span class="instructions-{{cardType}}">{{singularize-word cardType}} cards</span> related to the situation.
 </h3>
 
 {{#unless showSelectedCards}}
