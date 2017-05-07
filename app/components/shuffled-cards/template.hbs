@@ -1,5 +1,5 @@
 <h3>
-	{{!-- {{if (is-equal cardType "feelings") "2." "3."}} --}} {{unless isMobile "Choose" "Swipe right to select"}} all the <span class="instructions-{{cardType}}">{{!-- {{singularize-word cardType}} --}}feeling cards</span> related to the situation.
+	{{if (is-equal cardType "feelings") "2." "3."}} {{unless isMobile "Choose" "Swipe right to select"}} all the <span class="instructions-{{cardType}}">{{singularize-word cardType}} cards</span> related to the situation.
 </h3>
 
 {{#unless showSelectedCards}}
@@ -18,7 +18,7 @@
 	{{log selectedCards}}
 	<div class="selected-cards">
 		{{#each selectedCards as |selectedCard|}}
-			<div class="selected-card {{!-- {{singularize-word cardType}} --}}feeling-card">
+			<div class="selected-card {{singularize-word cardType}}-card">
 				{{selectedCard}}
 			</div>
 		{{/each}}
