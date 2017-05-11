@@ -4,6 +4,10 @@ import Ember from 'ember';
 import KeyboardBindings from 'empathy-cards/mixins/keyboard-bindings';
 
 export default Ember.Component.extend(KeyboardBindings, {
+    classNameBindings: ['isSelected:selected', 'isDiscarded:discarded'],
+    isSelected: false,
+    isDiscarded: false,
+
 	card: null,
     cardType: "",
 	
@@ -39,9 +43,11 @@ export default Ember.Component.extend(KeyboardBindings, {
     // Note: Return `false` to stop bubbling
     gestures: {
         swipeLeft: function(event) {
+            this.set('isDiscarded', true);
             this.send('discardCard');
         },
         swipeRight: function(event) {
+            this.set('isSelected', true);
             this.send('selectCard');
         }
     }
