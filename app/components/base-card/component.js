@@ -29,10 +29,10 @@ export default Ember.Component.extend(KeyboardBindings, {
 
     actions: {
         selectCard: function() {
-            this.sendAction('selectCard', this.get('card'));
+            this.sendAction('selectCard', this.get('indexToDisplay'));
         },
         discardCard: function() {
-            this.sendAction('discardCard', this.get('card'));
+            this.sendAction('discardCard', this.get('indexToDisplay'));
         }
     },
 

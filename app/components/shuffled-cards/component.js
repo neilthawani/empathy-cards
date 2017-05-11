@@ -17,8 +17,10 @@ export default Ember.Component.extend({
     },
 
     actions: {
-        selectCard: function(card) {
-            var selectedCards = this.get('selectedCards');
+        selectCard: function(index) {
+            var card = this.get('cards') && this.get('cards')[index],
+                selectedCards = this.get('selectedCards');
+
             selectedCards.push(card);
             this.set('selectedCards', selectedCards);
 
@@ -28,8 +30,10 @@ export default Ember.Component.extend({
                 this.send('displayNextStep');
             }
         },
-        discardCard: function(card) {
-            var discardedCards = this.get('discardedCards');
+        discardCard: function(index) {
+            var card = this.get('cards') && this.get('cards')[index],
+                discardedCards = this.get('discardedCards');
+                
             discardedCards.push(card);
             this.set('discardedCards', discardedCards);
 
